@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Categories from './Categories';
-import {Link} from 'react-router-dom'
+import {Link, Route} from 'react-router-dom'
+
 
 function Filter(props) {
 
@@ -26,15 +27,15 @@ fetch(url)
         <section className='container'> 
             {players.slice(0, 25).map((player) => {
                 return (
-                    <Link to={`/details/${player.account_id}`} key={player.account_id}>
-                 <div className='name'>
-                     <img 
-                src={player.avatar} alt={player.avatar}
-                />
-                     {player.name}
+                 <div className='dota-container'>
+                        <img src={player.avatar} alt={player.avatar}/>
+                        <Link to={`/details/${player.account_id}`} key={player.account_id}>
+                        <p>{player.name}</p>
+                     </Link> 
+                     {/* <Route exact path='/details' render={(props) => <Categories id={props.match.params.account_id}/>}/>  */}
                  </div>
-                    </Link>
-                
+                    
+                    
                 )
             })
         }

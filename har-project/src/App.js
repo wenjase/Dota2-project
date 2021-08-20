@@ -18,7 +18,8 @@ function App() {
       <Filter />
 
       <Route exact path='/' component={Nav}/>
-      <Route exact path='/details/:id' component={Categories}/> 
+      {/* <Route exact path='/Categories' component={Categories}/>  */}
+      {/* <Route exact path='/player-container' render={() => <Redirect to='./components/Categories'/>}/> */}
     </div>
   );
 }
