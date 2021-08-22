@@ -1,25 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Categories from './components/Categories';
 import Header from './components/Header';
 import Filter from './components/Filter';
 import Nav from './Nav';
-import {Route} from 'react-router-dom'
+import {Route, Link, Redirect, withRouter} from 'react-router-dom'
 
 function App() {
+
+  const [players, setPlayers] = useState([])
+
   return (
     <div className="App">
       <Header />
 
       <Nav />
+      <Route exact path='/' render={() => (
+        <Filter players={players} setPlayers={setPlayers}/>
+      )}/>
+      <Route exact path='/Categories/:account_id' render={(routerProps) => (
+        <Categories match={routerProps} players={players}/>
 
-      <Categories />
-
-      <Filter />
-
-      <Route exact path='/' component={Nav}/>
-      {/* <Route exact path='/Categories' component={Categories}/>  */}
-      {/* <Route exact path='/player-container' render={() => <Redirect to='./components/Categories'/>}/> */}
+      )}/> 
+      
+      
     </div>
   );
 }

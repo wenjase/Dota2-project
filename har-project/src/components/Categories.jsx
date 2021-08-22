@@ -1,37 +1,28 @@
 import React, {useState, useEffect} from 'react';
 
-function Categories(props) {
-
-    const [player, setPlayer] = useState([])
-
-    // useEffect(() => {    
-    // const url = `https://api.opendota.com/api/proPlayers`
-    // fetch(url)
-    // .then((res) => res.json())
-    // .then((data) => {
-    //     console.log(data[0].name)
-    //     setPlayer(data)
-    //     console.log(player)
-    // })
-    // .catch(console.error);}, []);
-
-
-
-
-    return (
-        <div className='player-container'> 
-            <img src={player.avatar} alt={player.avatar}/>
-                <div className='info'>
-                    <h2>{player.name}</h2>
-                    <h3>{player.personaname}</h3>
-                    <p>
-                        {player.team_name}
-                        {player.team_tag}
-                        {player.profileurl}
-                    </p>
-                </div>
-        </div>
-    );
+function Categories({players}) {
+    const [loading, setLoading] = useState(true)
+    if (loading) {
+        return (
+            <h1>loading</h1>
+        )
+    } else {
+        return (
+            <div className='player-container'> 
+               <img src={players[0].avatar} alt={players[0].avatar}/>
+                   <div className='info'>
+                       <h2>{players[0].name}</h2>
+                       <h3>{players[0].personaname}</h3>
+                       <p>
+                           {players[0].team_name}
+                           {players[0].team_tag}
+                           {players[0].profileurl}
+                       </p>
+                       <h2>working?</h2>
+                   </div>
+            </div>
+        );
+    }
 }
 
 export default Categories;

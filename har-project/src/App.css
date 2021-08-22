@@ -5,3 +5,16 @@
   width: 10px;
   height: 10px;
 }
+.Homebutton {
+  width: 10px;
+  height: 10px;
+
+}
+.App {
+  background-image: url(./dota.jpeg);
+}
+/* .dota-two-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+} */

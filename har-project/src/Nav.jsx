@@ -5,7 +5,7 @@ function Nav(props) {
     return (
         <div className='Home'>
             <Link to='/'>
-            <h2>Home</h2>
+            <button type='button'>Home</button>
             </Link>
         </div>
     );
