@@ -8,18 +8,19 @@ import {Route, Link, Redirect, withRouter} from 'react-router-dom'
 
 function App() {
 
-  const [players, setPlayers] = useState([])
+  const [players, setPlayers] = useState()
 
   return (
     <div className="App">
       <Header />
 
       <Nav />
-      <Route exact path='/' render={() => (
-        <Filter players={players} setPlayers={setPlayers}/>
-      )}/>
+      
+      {/* <Filter /> */}
+      <Route exact path='/'  component={Filter} />
+      <Route exact path='/players'  component={Filter} />
       <Route exact path='/Categories/:account_id' render={(routerProps) => (
-        <Categories match={routerProps} players={players}/>
+        <Categories match={routerProps.match} setPlayers={setPlayers} players={players}/>
 
       )}/> 
       

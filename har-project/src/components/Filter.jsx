@@ -5,8 +5,10 @@ import {Link, Route} from 'react-router-dom';
 
 
 
-function Filter({players, setPlayers}) {
+function Filter() {
 const [loading, setLoading] = useState(true)
+
+const [players, setPlayers] = useState(null)
 
 
 
@@ -41,6 +43,8 @@ if (loading) {
                         <Link to={`/Categories/${player.account_id}`} key={player.account_id}>
                         <p>{player.name}</p>
                      </Link>
+                     {/* <Route exact path='/Categories/:account_id' render={(routerProps) => (
+                        <Categories match={routerProps.match} player={player} setPlayers={setPlayers}/>   )}/>  */}
                  </div> 
                 )
             })

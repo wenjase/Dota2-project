@@ -1,5 +1,6 @@
 .container {
   column-count: 5;
+  margin: 2rem;
 }
 .Home{
   width: 10px;
@@ -8,13 +9,26 @@
 .Homebutton {
   width: 10px;
   height: 10px;
-
+  position: absolute;
+  left: 20px;
 }
 .App {
   background-image: url(./dota.jpeg);
 }
-/* .dota-two-container {
-  position: relative;
-  display: flex;
+.info {
+  /* position: absolute;
+  display: inline-block;
+  white-space: nowrap;
+  right: 30rem;
+  background-color: green; */
+}
+.dota-container {
+  /* background-color: white; */
+}
+.player-container {
+  position: absolute;
+  left: 23rem;
+  display: block;
   justify-content: center;
-} */
+  
+}
