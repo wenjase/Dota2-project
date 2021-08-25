@@ -20,9 +20,9 @@ function App() {
       <Route exact path='/'  component={Filter} />
       <Route exact path='/players'  component={Filter} />
       <Route exact path='/Categories/:account_id' render={(routerProps) => (
-        <Categories match={routerProps.match} setPlayers={setPlayers} players={players}/>
-
-      )}/> 
+        <Categories match={routerProps.match} setPlayers={setPlayers} players={players}/> )}/> 
+        <Route exact path='/player-container' render={() => <Redirect to='/Categories'/>}/>
+        
       
       
     </div>
